@@ -4,7 +4,7 @@ This tiny tool is used to simple migrate data from MongoDb database
 to PostgreSQL database. It uses appropriate ORMs: `mongoose` and 
 `knex` respectively to transfer data.
 
-## Requrements
+## Requirements
 * Node.js 13+
 * MongoDb 4+
 * PostgreSQL 12+
@@ -17,13 +17,13 @@ to PostgreSQL database. It uses appropriate ORMs: `mongoose` and
 
 2. Define migration settings in `settings.js` file:
 
-** IMPORTANT NOTE **
+**IMPORTANT NOTE**
 
-** You MUST respect the order of the tables. Tables with foreign keys MUST BE placed AFTER tables, from which these keys are. **
+**You MUST respect the order of the tables. Tables with foreign keys MUST BE placed AFTER tables, from which these keys are.**
 
 *You can use this sample schema.*
 
-`
+```
 export default [
   {
     collectionName: 'department',  // collection name in Mongo
@@ -51,8 +51,8 @@ export default [
     }
   }
 ];
-`
+```
 
-3. Run `index.js` script. Connection string are defined in env variables:
+3. Run `index.js` script. Connection strings are defined in environment variables:
 
 `MONGO_CONNECTION_STRING=mongodb://host/db PG_CONNECTION_STRING=postgres://user:password@host:5432/db node index.js`
