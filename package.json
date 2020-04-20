@@ -12,8 +12,8 @@
     "migration",
     "database"
   ],
-  "homepage": "https://my-new-project-website.com",
-  "bugs": "https://github.com/you/my-new-project/issues",
+  "homepage": "https://github.com/alxnkt/mongo-to-postgres",
+  "bugs": "https://github.com/alxnkt/mongo-to-postgres/issues",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^6.8.0"
