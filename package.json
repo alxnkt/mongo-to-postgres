@@ -3,6 +3,9 @@
   "name": "mongo-to-postgres",
   "version": "0.0.1",
   "description": "Simple migrate data from MongoDb to PostgreSQL",
+  "scripts": {
+    "migrate": "node index.js"
+  },
   "main": "index.js",
   "author": "alxnkt <chauffeur@mail.ru>",
   "license": "MIT",

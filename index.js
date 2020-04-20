@@ -1,5 +1,5 @@
-import getFromMongo from './get-from-mongo.js';
-import putToPostgres from './put-to-postgres.js';
+import getFromMongo from './src/get-from-mongo.js';
+import putToPostgres from './src/put-to-postgres.js';
 import collections from './settings.js';
 
 async function performProcess () {
