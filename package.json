@@ -7,7 +7,7 @@
     "migrate": "node index.js"
   },
   "main": "index.js",
-  "author": "alxnkt <chauffeur@mail.ru>",
+  "author": "alxnkt <alxnkt@mail.ru>",
   "license": "MIT",
   "keywords": [
     "mongo",
