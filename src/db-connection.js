@@ -1,14 +1,15 @@
 import mongoose from 'mongoose';
 import Knex from 'knex';
+import { connections } from '../settings.js';
 
-const mongooseConn = mongoose.connect(process.env.MONGO_CONNECTION_STRING,
+const mongooseConn = mongoose.connect(connections.mongo,
   {
     useNewUrlParser: true, useUnifiedTopology: true
   });
 
 const knex = Knex({
   client: 'pg',
-  connection: process.env.PG_CONNECTION_STRING,
+  connection: connections.postgres
 });
 
 export { mongoose, mongooseConn, knex };

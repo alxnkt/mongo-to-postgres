@@ -1,5 +1,5 @@
 import { knex } from './db-connection.js';
-import collections from '../settings.js';
+import { collections } from '../settings.js';
 
 /**
    * Insert data to destination table
