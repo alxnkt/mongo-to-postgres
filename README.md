@@ -18,19 +18,19 @@ to PostgreSQL database. It uses appropriate ORMs: `mongoose` and
 ### 2. Define connection strings and migration settings in `settings.js` file:
 
 **IMPORTANT NOTE**
-
 **You MUST respect the order of the tables. Tables with foreign keys MUST BE placed AFTER tables, from which these keys are.**
 
 *You can use this sample schema.*
 
 ```
+// Define connection strings
 const connections = {
   mongo: 'mongodb://localhost/dbname',
   postgres: 'postgres://postgres:secret@localhost:5432/dbname'
 };
 
+// Define your database migration settings here
 const collections = [
-  // Define your database migration settings here
   {
     collectionName: 'department',  // collection name in Mongo
     tableName: 'departments',      // table name in Postgres

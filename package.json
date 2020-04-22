@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "mongo-to-postgres",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple migrate data from MongoDb to PostgreSQL",
   "main": "index.js",
   "bin": {
