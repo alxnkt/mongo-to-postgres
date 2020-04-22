@@ -33,7 +33,7 @@ export default [
       ['updatedAt', 'updated_at']  // set new name for other field (optional)
     ],
     fieldsRedefine: [
-      ['dep_type', 1]              // forse to set value for all records (optional)
+      ['dep_type', 1]              // force to set value for all records (optional)
     ]
   },
   {
