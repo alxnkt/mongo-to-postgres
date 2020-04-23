@@ -89,3 +89,5 @@ node_modules
 ############################
 
 .vscode
+
+migrate.js
