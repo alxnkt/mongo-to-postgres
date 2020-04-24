@@ -1,11 +1,7 @@
-#!/usr/bin/env node
-
 import mongoose from 'mongoose';
 import Knex from 'knex';
 import getFromMongo from './src/get-from-mongo.js';
 import putToPostgres from './src/put-to-postgres.js';
-// import { collections } from './settings.js';
-// import { mongooseConn, knex } from './src/db-connection.js';
 
 export default async ({ connections, collections }) => {
   console.log('Starting migration...');
@@ -43,12 +39,11 @@ export default async ({ connections, collections }) => {
 
 async function performProcess(mongooseConn, knex, collections) {
   for (const collection of collections) {
-    const rows = await getFromMongo(mongooseConn, collection.collectionName);
     const idsMap = await putToPostgres({
       knex,
       collections,
       tableName: collection.tableName,
-      rows: rows
+      rows: await getFromMongo(mongooseConn, collection.collectionName)
     });
     collection.idsMap = idsMap;
   }

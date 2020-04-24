@@ -1,8 +1,7 @@
-// import { knex } from './db-connection.js';
-// import { collections } from '../settings.js';
-
 /**
    * Insert data to destination table
+   * @param {object} kenx - knex object
+   * @param {Array} collections - Array of collections
    * @param {string} tableName - Table name
    * @param {string} rows - Objects to insert
    * @return {Array} Ids map

@@ -4,9 +4,6 @@
   "version": "0.0.2",
   "description": "Simple migrate data from MongoDb to PostgreSQL",
   "main": "index.js",
-  "bin": {
-    "migrate": "./index.js"
-  },
   "author": "alxnkt <alxnkt@mail.ru>",
   "license": "MIT",
   "keywords": [
