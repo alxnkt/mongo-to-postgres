@@ -1,5 +1,5 @@
-import { knex } from './db-connection.js';
-import { collections } from '../settings.js';
+// import { knex } from './db-connection.js';
+// import { collections } from '../settings.js';
 
 /**
    * Insert data to destination table
@@ -7,7 +7,7 @@ import { collections } from '../settings.js';
    * @param {string} rows - Objects to insert
    * @return {Array} Ids map
    */
-export default async ({ tableName, rows }) => {
+export default async ({ knex, collections, tableName, rows }) => {
   const { foreignKeys, fieldsRename, fieldsRedefine, links } =
     collections.find(c => c.tableName === tableName);
 
