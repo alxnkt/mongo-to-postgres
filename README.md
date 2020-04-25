@@ -11,7 +11,7 @@ to PostgreSQL database. It uses appropriate ORMs: `mongoose` and
 
 ## Usage
 
-### 1. Install package:
+### 1. Install package
 
 `$ yarn add mongo-to-postgres`
 
@@ -19,13 +19,15 @@ OR
 
 `$ npm i mongo-to-postgres`
 
-### 2. Create file `migrate.js`, set migration settings in it:
+### 2. Create file `migrate.js`, set migration settings in it
 
 **IMPORTANT NOTES**
+
 **1. You MUST respect the order of the tables. Tables with foreign keys MUST BE placed AFTER tables, from which these keys are.**
+
 **2. This sample assumes that you have postgres database with empty schema.**
 
-```
+```javascript
 import migrate from 'mongo-to-postgres';
 
 migrate({
@@ -65,6 +67,17 @@ migrate({
 });
 ```
 
-### 3. Run migration
+### 3. Set `package.json` `"type"` field
+
+```json
+{
+  "type": "module",
+  "dependencies": {
+    "mongo-to-postgres": "^0.0.3"
+  }
+}
+```
+
+### 4. Run migration
 
 `$ node migrate.js`
