@@ -17,13 +17,13 @@ to PostgreSQL database. It uses appropriate ORMs: `mongoose` and
 
 OR
 
-`npm i mongo-to-postgres`
+`$ npm i mongo-to-postgres`
 
-### 2. Create file `migrate.js`, set migration settings:
+### 2. Create file `migrate.js`, set migration settings in it:
 
-**IMPORTANT NOTE**
-**You MUST respect the order of the tables. Tables with foreign keys MUST BE placed AFTER tables, from which these keys are.**
-**This sample assumes that you have postgres database with empty schema.**
+**IMPORTANT NOTES**
+**1. You MUST respect the order of the tables. Tables with foreign keys MUST BE placed AFTER tables, from which these keys are.**
+**2. This sample assumes that you have postgres database with empty schema.**
 
 ```
 import migrate from 'mongo-to-postgres';
