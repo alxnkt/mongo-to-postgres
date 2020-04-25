@@ -5,7 +5,7 @@ to PostgreSQL database. It uses appropriate ORMs: `mongoose` and
 `knex` respectively to transfer data.
 
 ## Requirements
-* Node.js 13+
+* Node.js 13+ **(NOT 14!!!)**
 * MongoDb 4+
 * PostgreSQL 12+
 

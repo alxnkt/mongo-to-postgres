@@ -15,7 +15,7 @@ export default async ({ connections, collections }) => {
       });
     console.log('connected.');
   } catch (err) {
-    console.log('ERROR');
+    console.log('ERROR MONGO');
     console.err(err);
   }
 
@@ -28,6 +28,7 @@ export default async ({ connections, collections }) => {
     });
     console.log('connected.');
   } catch (err) {
+    console.log('ERROR POSTGRES');
     console.err(err);
   }
 
@@ -39,11 +40,12 @@ export default async ({ connections, collections }) => {
 
 async function performProcess(mongooseConn, knex, collections) {
   for (const collection of collections) {
+    const rows = await getFromMongo(mongooseConn, collection.collectionName);
     const idsMap = await putToPostgres({
       knex,
       collections,
       tableName: collection.tableName,
-      rows: await getFromMongo(mongooseConn, collection.collectionName)
+      rows
     });
     collection.idsMap = idsMap;
   }

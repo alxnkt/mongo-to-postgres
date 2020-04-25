@@ -83,8 +83,7 @@ export default async ({ knex, collections, tableName, rows }) => {
           const map = foreignCollection.idsMap.find(x => x.oldId === foreignKey);
           linkRow[linksTableAttrs[1]] = newId[0];
           linkRow[linksTableAttrs[2]] = map.newId;
-          await knex(linksTableAttrs[0])
-            .insert(linkRow);
+          await knex(linksTableAttrs[0]).insert(linkRow);
         }
       }
     }
