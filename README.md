@@ -73,7 +73,7 @@ migrate({
 {
   "type": "module",
   "dependencies": {
-    "mongo-to-postgres": "^0.0.3"
+    "mongo-to-postgres": "^0.0.4"
   }
 }
 ```
