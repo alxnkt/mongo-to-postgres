@@ -11,27 +11,32 @@ to PostgreSQL database. It uses appropriate ORMs: `mongoose` and
 
 ## Usage
 
-### 1. Clone repository:
+### 1. Install package:
 
-`$ git clone https://github.com/alxnkt/mongo-to-postgres`
+`$ yarn add mongo-to-postgres`
 
-### 2. Define connection strings and migration settings in `settings.js` file:
+OR
+
+`npm i mongo-to-postgres`
+
+### 2. Create file `migrate.js`, set migration settings:
 
 **IMPORTANT NOTE**
 **You MUST respect the order of the tables. Tables with foreign keys MUST BE placed AFTER tables, from which these keys are.**
-
-*You can use this sample schema.*
+**This sample assumes that you have postgres database with empty schema.**
 
 ```
-// Define connection strings
-const connections = {
-  mongo: 'mongodb://localhost/dbname',
-  postgres: 'postgres://postgres:secret@localhost:5432/dbname'
-};
+import migrate from 'mongo-to-postgres';
 
-// Define your database migration settings here
-const collections = [
-  {
+migrate({
+  // Define connection strings
+  connections: {
+    mongo: 'mongodb://localhost/dbname',
+    postgres: 'postgres://postgres:secret@localhost:5432/dbname'
+  },
+  // Define your database migration settings
+  collections: [
+    {
     collectionName: 'department',  // collection name in Mongo
     tableName: 'departments',      // table name in Postgres
     fieldsRename: [
@@ -56,11 +61,10 @@ const collections = [
       awards: ['emplyees__awards', 'employee_id', 'award_id']
     }
   }
-];
-
-export { connections, collections };
+  ]
+});
 ```
 
 ### 3. Run migration
 
-`$ migrate`
+`$ node migrate.js`
