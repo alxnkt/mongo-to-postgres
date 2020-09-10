@@ -25,7 +25,7 @@ OR
 
 **1. You MUST respect the order of the tables. Tables with foreign keys MUST BE placed AFTER tables, from which these keys are.**
 
-**2. This sample assumes that you have postgres database with empty schema.**
+**2. This sample assumes that you have postgres database with schema, containing empty tables.**
 
 ```javascript
 import migrate from 'mongo-to-postgres';
