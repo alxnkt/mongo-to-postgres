@@ -1,11 +1,11 @@
-# Simple migrate data from MongoDb to PostgreSQL
+# Simple data migration from MongoDb to PostgreSQL
 
 This tiny tool is used to simple migrate data from MongoDb database
 to PostgreSQL database. It uses appropriate ORMs: `mongoose` and 
 `knex` respectively to transfer data.
 
 ## Requirements
-* Node.js 13+ **(NOT 14!!!)**
+* Node.js 13+
 * MongoDb 4+
 * PostgreSQL 12+
 
