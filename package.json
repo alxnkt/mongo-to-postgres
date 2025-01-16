@@ -22,7 +22,7 @@
   "dependencies": {
     "bookshelf": "^1.2.0",
     "knex": "^2.3.0",
-    "mongoose": "^6.5.4",
+    "mongoose": "^8.9.5",
     "pg": "^8.8.0"
   }
 }
